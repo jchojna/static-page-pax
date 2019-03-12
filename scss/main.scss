@@ -1,0 +1,613 @@
+@import 'variables';
+
+html {
+    color: rgb(0, 0, 0);
+    font-size: 1em;
+    line-height: 1.4;
+    font-family: Roboto, Raleway, Arial, Helvetica, sans-serif;
+}
+::-moz-selection {
+    background: grey;
+    text-shadow: none;
+}
+::selection {
+    background: grey;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   MIXINS
+   ========================================================================== */
+  @mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+   $main-blue-color: #0149a1;
+   $light-blue-color: #5483bb;
+   $purple-color: #ff2d55;
+   $very-light-blue-grey: #e3e7eb;
+   $light-blue-grey: #7c8ca0;
+   $dark-blue-grey: #5d6981;
+   $light-grey-background: #edeff1;
+
+   $circle-button-diameter: 80px;
+
+
+  
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+  font: 300 18px / 1.6em Roboto, Arial, sans-serif;
+  color: $light-blue-grey
+}
+
+/* ==========================================================================
+LINKS */
+
+a {
+  text-decoration: none;
+  color: $light-blue-grey
+}
+
+a:not(.page-logo,.btn):hover {
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+IMAGES */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+BUTTONS */
+
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 100px;
+  line-height: 1em;
+  padding: 20px 70px;
+  color: white;
+}
+
+.btn-primary {
+  background-color: $purple-color;
+}
+
+.btn-default {
+  padding: 20px 30px;
+  background-color: white;
+  color: $main-blue-color;
+}
+
+.btn-additional {
+  background-color: $main-blue-color;
+  box-shadow: 0px 0px 150px 100px rgba(255,255,255,1);
+}
+
+.fa-play {
+  color: $light-blue-grey;
+}
+
+.circle {
+  color: $light-blue-grey;
+  font-size: 50px;
+  line-height: $circle-button-diameter;
+  border: 2px solid $very-light-blue-grey;
+  padding: 0;
+  min-width: $circle-button-diameter;
+  min-height: $circle-button-diameter;
+  max-width: $circle-button-diameter;
+  max-height: $circle-button-diameter;
+}
+
+/* ==========================================================================
+LOGO */
+
+.page-logo, .page-logo img {
+  display: block;
+}
+
+/* ==========================================================================
+GRID */
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ==========================================================================
+   PAGE HEADER
+========================================================================== */
+
+.page-header {
+  padding: 25px 0;
+  border-bottom: 1px solid #e4e6ea;
+}
+
+.page-header > .container {
+  @include flex;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+MENU */
+
+.menu-list {
+  padding: 0; // dobrze wyzerowac w przypadku listy
+  margin: 0;  // dobrze wyzerowac w przypadku listy
+  list-style-type: none;
+  @include flex;
+}
+
+.menu-list li {
+  margin: 2px;
+  display: inline-block;
+}
+
+.menu-list li a {
+  display: inline-block;
+  padding: 15px 25px;
+  font: 400 20px /1em Roboto, Arial, sans-serif;
+  color: $dark-blue-grey;
+}
+
+.menu-list .active-btn {
+  border: 1px solid #9fabba;
+  border-radius: 100px;
+}
+
+/* ==========================================================================
+NAV ICONS */
+
+.menu-list .menu-icon {
+  margin-left: 15px;
+}
+
+.menu-list .menu-icon a {
+  padding: 0;
+  display: block; // WAZNE - dla background
+  background-repeat: no-repeat;
+  height: 46px;
+  width: 46px;
+}
+
+.facebook-icon {
+  background-image: url("../img/facebook-icon.png");
+}
+
+.twitter-icon {
+  background-image: url("../img/twitter-icon.png");
+
+}
+
+/* ==========================================================================
+   INTRO SECTION
+========================================================================== */
+
+.intro-section {
+  background: linear-gradient(to top, #edeff1 0%, #edeff1 1%, #ffffff 21%, #e2e4e8 31%, #f1f1f1 100%);
+  padding: 150px 0 125px 0;
+}
+
+/* ==========================================================================
+SECTION HEADER */
+
+.section-header {
+  text-align: center;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1em;
+  color: $main-blue-color;
+}
+
+.section-header p {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1.6em;
+  color: $dark-blue-grey;
+}
+
+/* ==========================================================================
+INTRO CTA */
+
+.intro-cta {
+  text-align: center;
+  margin: 110px 0;
+}
+
+/* ==========================================================================
+INTRO VIDEO */
+
+.intro-video {
+
+  max-width: 1330px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background: url('../img/chat.png') no-repeat left top 55px, url('../img/lightbulb.png') no-repeat right top 25px;
+  background-size: fill;
+}
+
+.intro-video-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 1094px;
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+}
+
+.intro-video-img .btn {
+  position: absolute;
+  margin-top: -100px;
+}
+
+/* ==========================================================================
+FEATURE BOXES */
+
+.feature-boxes > .container {
+  @include flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.feature-box, .team-people-box {
+  text-align: center;
+  flex-basis: 23%;
+}
+
+.feature-box h3, .team-people-box h3 {
+  font-size: 30px;
+  color: $dark-blue-grey;
+}
+
+.feature-box img {
+  height: 80px;
+}
+
+/* ==========================================================================
+CREATIVITY SECTION 
+========================================================================== */
+
+.creativity-section-img {
+  @include flex;
+  width: 100%;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.creativity-section-img .btn {
+  position: absolute;
+  margin-top: 100px;
+}
+
+/* ==========================================================================
+HOW WE WORK SECTION 
+========================================================================== */
+
+.how-we-work-section {
+  background-color: $main-blue-color;
+  text-align: center;
+  padding: 125px 0;
+}
+
+.how-we-work-section .section-header h2 {
+  color: white;
+}
+
+.how-we-work-section .section-header p {
+  color: $light-blue-color;
+}
+
+.how-we-work-section > .container {
+  @include flex;
+  align-items: flex-start;
+  margin: 80px auto 70px;
+}
+
+.how-we-work-section > .container > * {
+  width: 50%;
+  padding: 0 15px;
+}
+
+.work-scheme-png {
+  width: 517px;
+  height: 277px;
+}
+
+.work-scheme-text p {
+  margin: 0 0 30px;
+  text-align: left;
+  color: white;
+}
+
+.how-we-work-section a {
+  padding: 20px 70px;
+}
+
+/* ==========================================================================
+QUOTE SECTION
+========================================================================== */
+
+.quote-section > .container {
+  margin: 105px auto 80px;
+}
+
+.quote {
+  margin: 40px 0 100px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.quote-header {
+  max-width: 570px;
+}
+
+.quote-header h2 {
+  margin: 0 0 40px;
+  padding: 0;
+  font-size: 24px;
+  line-height: 1.2em;
+  font-style: italic;
+  font-weight: 300;
+  
+}
+
+.quote-header p {
+  margin: 0;
+  padding: 0;
+}
+
+.slider-dot {
+  display: inline-block;
+  border: 1px solid $light-blue-grey;
+  border-radius: 50%;
+  min-width: 20px;
+  min-height: 20px;
+  margin: 0 3px;
+}
+
+.active-dot {
+  box-shadow: inset 0 0 0 4px white;
+  background-color: $light-blue-grey;
+}
+
+/* ==========================================================================
+TEAM SECTION
+========================================================================== */
+
+.team-section {
+  background-color: $light-grey-background;
+  display: flex;
+}
+
+.team-section > .container {
+  margin: 125px auto;
+}
+
+.team-section p {
+  color: $light-blue-grey;
+}
+
+.team-people {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 80px 0;
+}
+
+.team-people-box img {
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+MAP SECTION
+========================================================================== */
+
+.map-section {
+  width: 100%;
+  height: 592px;
+  background: url('../img/map.PNG') no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+}
+
+.map-icon {
+  margin: auto;
+}
+
+
+
+/* ==========================================================================
+FOOTER 
+========================================================================== */
+
+.page-footer {
+  padding: 20px 0;
+  text-align: center;
+  background-color: $main-blue-color;
+  user-select: none;
+}
+
+.page-footer p {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* @media only screen and (min-width: 480px) {
+}
+@media only screen and (min-width: 768px) {
+} */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+  }
